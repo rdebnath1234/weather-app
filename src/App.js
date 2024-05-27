@@ -29,14 +29,13 @@ const App = () => {
   };
 
   return (
-    <div className="container ">
+    <div className="container mt-5">
       <div className="d-flex justify-content-center">
         <div className="row">
           <input type="text" value={city} onChange={handleInputChange} />
         </div>
       </div>
-      <div className="card"
-      style={{backgroundImage:`url(${weatherData.bg_image})`}}>
+      <div className="mt-5" style={{backgroundImage:`url(${weatherData.bg_image})`}}>
       <div className="row">
         <div className="col-md-6">
           <h1>{city}</h1>
