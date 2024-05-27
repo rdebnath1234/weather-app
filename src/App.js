@@ -29,12 +29,14 @@ const App = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container ">
       <div className="d-flex justify-content-center">
-        <div className="row"  style={{ backgroundImage: `url(${weatherData.bg_image})` }}>
+        <div className="row">
           <input type="text" value={city} onChange={handleInputChange} />
         </div>
       </div>
+      <div className="card"
+      style={{backgroundImage:`url(${weatherData.bg_image})`}}>
       <div className="row">
         <div className="col-md-6">
           <h1>{city}</h1>
@@ -43,6 +45,7 @@ const App = () => {
       <p>Current Weather: {weatherData.current_weather}</p>
       <p>Temperature: {weatherData.temperature}</p>
       <p>Humidity: {weatherData.humidity}</p>
+      </div>
     </div>
   );
 };
