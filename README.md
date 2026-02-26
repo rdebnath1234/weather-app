@@ -41,6 +41,28 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173).
 
+## Feature Screenshots
+1. Guest dashboard  
+![Guest dashboard](docs/screenshots/01-dashboard-guest.png)
+
+2. Weather search with hourly and daily forecast  
+![Weather search](docs/screenshots/02-weather-search.png)
+
+3. Rain precipitation chart mode  
+![Rain chart mode](docs/screenshots/03-rain-chart-mode.png)
+
+4. Register form view  
+![Register form](docs/screenshots/04-register-form.png)
+
+5. Logged-in view with favorites and search history  
+![Logged-in favorites/history](docs/screenshots/05-logged-in-favorites-history.png)
+
+To regenerate screenshots locally:
+```bash
+cd /Users/riyadebnathdas/Desktop/Projects/Weather\ App/client
+npm run screenshots
+```
+
 ## Production build
 
 ```bash
