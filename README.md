@@ -25,7 +25,17 @@ npm install
 
 3. Configure environment:
 
-Update `OPENWEATHER_API_KEY`, `JWT_SECRET`, and `MONGO_URI` in `/Users/riyadebnathdas/Desktop/Projects/Weather App/server/.env`.
+Create `/Users/riyadebnathdas/Desktop/Projects/Weather App/server/.env` and add the required variables:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=replace_with_a_long_random_secret
+OPENWEATHER_API_KEY=your_openweathermap_api_key
+PORT=5000
+CLIENT_ORIGIN=http://localhost:5173
+```
+
+`MONGO_URI`, `JWT_SECRET`, and `OPENWEATHER_API_KEY` are required. `PORT` and `CLIENT_ORIGIN` are optional overrides.
 
 4. Run in development:
 
@@ -71,6 +81,34 @@ npm run build
 ```
 
 Then start the server and open [http://localhost:5001](http://localhost:5001). The server serves `/Users/riyadebnathdas/Desktop/Projects/Weather App/client/dist`.
+
+## Deploy On Railway
+1. Push this repository to GitHub.
+
+2. In Railway, create a new project from the GitHub repo.
+
+3. Use these service settings so Railway builds the frontend before starting the backend:
+
+```bash
+# Build Command
+cd client && npm ci && npm run build && cd ../server && npm ci
+
+# Start Command
+cd server && npm start
+```
+
+4. Add these Railway environment variables:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=replace_with_a_long_random_secret
+OPENWEATHER_API_KEY=your_openweathermap_api_key
+CLIENT_ORIGIN=https://your-app.up.railway.app
+```
+
+5. After the first deploy, confirm the API is healthy at `/api/health`.
+
+Railway provides `PORT` automatically, so you do not need to set it manually there.
 
 ## Notes
 - The backend uses OpenWeatherMap geocoding to support world city names.
