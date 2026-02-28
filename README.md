@@ -87,15 +87,7 @@ Then start the server and open [http://localhost:5001](http://localhost:5001). T
 
 2. In Railway, create a new project from the GitHub repo.
 
-3. Use these service settings so Railway builds the frontend before starting the backend:
-
-```bash
-# Build Command
-cd client && npm ci && npm run build && cd ../server && npm ci
-
-# Start Command
-cd server && npm start
-```
+3. Railway will use the root `Dockerfile` automatically, so no custom build or start command is required.
 
 4. Add these Railway environment variables:
 
