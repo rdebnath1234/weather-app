@@ -29,7 +29,20 @@ if (missingEnv.length > 0) {
 const PORT = process.env.PORT || 5000;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:5001";
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        imgSrc: [
+          "'self'",
+          "data:",
+          "https://openweathermap.org",
+          "https://*.openweathermap.org",
+        ],
+      },
+    },
+  })
+);
 app.use(
   cors({
     origin: CLIENT_ORIGIN,
